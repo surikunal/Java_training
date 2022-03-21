@@ -17,9 +17,28 @@ public class questions {
         for (int i = 0; i < n; i++) {
             arr[i] = scn.nextInt();
         }
-        // step 4
-        // main logic
-        // finding span of an array
+
+        // spanOfAnArray(arr, n);
+        // findTarget(arr, n, 6);
+        int[] answer = reverseOfAnArray(arr, n);
+        for (int i = 0; i < n; i++) {
+            System.out.print(answer[i] + ", ");
+        }
+    }
+
+    public static int[] reverseOfAnArray(int[] arr, int n) {
+        for (int i = 0; i < n; i++) {
+            int startIndex = i;
+            int endIndex = n - 1 - i;
+
+            int temp = arr[startIndex];
+            arr[startIndex] = arr[endIndex];
+            arr[endIndex] = temp;
+        }
+        return arr;
+    }
+
+    public static void spanOfAnArray( int[] arr, int n ) {
         int minimum = Integer.MAX_VALUE;
         // System.out.println(minimum);
         int maximum = Integer.MIN_VALUE;
@@ -37,5 +56,14 @@ public class questions {
         System.out.println("maxi val : " + maximum);
         int ans = maximum - minimum;
         System.out.println("ans is : " + ans);
+    }
+    public static void findTarget(int[] arr, int n, int target) {
+        for (int i = 0; i < n; i++) {
+            if ( arr[i] == target ) {
+                System.out.println("Index of target is : " + i);
+                break;  // used to terminate loop
+            }
+        }
+        return; // used to terminate function
     }
 }
