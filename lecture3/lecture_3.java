@@ -1,3 +1,4 @@
+package lecture3;
 public class lecture_3 {
     // non parameterised
     public static void func() { // declaration of function
@@ -31,9 +32,9 @@ public class lecture_3 {
     }
 
     // String, int, boolean, Array, byte, short, .......
-    public static String food1(String dish) {
-        // statenents
-        return dish;
+    public static int food1(String dish) {
+        // statements
+        return 24;
     }
 
     public static void main(String[] args) {
@@ -42,19 +43,20 @@ public class lecture_3 {
 
         // func1("Kunal"); // calling of a function
 
-        // func2("Divya", 23); // arguments
+        // func2("Divya", 23); // multiple arguments
         // func2("Rahul", 21);
         // func2("Kapil", 20);
 
         // func3("Divyamani", true);
         // func3("Sonali", false);
 
-        // function Overloading
+        // Function Overloading // different functions with same name and different parameters
         // func3("Shubh", true);
         // func3("Shubh", 38);
 
-        food("Daal Makhani");
+        food("Daal Makhani");   // waiter 1
 
-        String dish = food1("Paneer");
+        int num = food1("Paneer");  // waiter 2
+        System.out.print(num);
     }
 }
