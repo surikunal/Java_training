@@ -9,11 +9,14 @@ class lecture {
         for (int i = 0; i < n; i++) {
             arr[i] = scn.nextInt();
         }
+        int target = scn.nextInt();
+        int ans = search(arr, target);
+        System.out.println(ans);
         // =============================================
-        int[] ans = inverseOfArray(arr, n);   // calling a function
-        for (int i = 0; i < n; i++) {
-            System.out.println(ans[i]);
-        }
+        // int[] ans = inverseOfArray(arr, n);   // calling a function
+        // for (int i = 0; i < n; i++) {
+        //     System.out.println(ans[i]);
+        // }
     }
     public static int[] inverseOfArray(int[] arr, int n) {
         int[] answer = new int[n];
@@ -55,5 +58,23 @@ class lecture {
         reverse(arr, 0, n - k - 1);
         // 3 -> reverse the whole array
         reverse(arr, 0, n - 1);
+    }
+
+
+    // binary search ===============================================
+    public static int search(int[] arr, int target) {
+        int n = arr.length;
+        int i = 0, j = n - 1;
+        while ( i <= j ) {
+            int mid = (i + j) / 2;
+            if ( arr[mid] == target ) {
+                return mid;
+            } else if ( arr[mid] < target ) {
+                i = mid + 1;
+            } else if ( arr[mid] > target ) {
+                j = mid - 1;
+            }
+        }
+        return -1;
     }
 }
