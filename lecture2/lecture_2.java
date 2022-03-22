@@ -1,3 +1,4 @@
+package lecture2;
 import java.util.Scanner;
 
 public class lecture_2 {
