@@ -27,9 +27,28 @@ public class lecture {
         // for (int i : arr) {
         // System.out.print(i + " ");
         // }
-        count012(arr);
-        for (int i : arr) {
-            System.out.print(i + " ");
+        // count012(arr);
+        // for (int i : arr) {
+        // System.out.print(i + " ");
+        // }
+        int[][] arr2d = { { 1, 2, 3, 4, 5 }, 
+                          { 6, 7, 8, 9, 10 }, 
+                          { 11, 12, 13, 14, 15 }, 
+                          { 16, 17, 18, 19, 20 } };
+        wave1(arr2d);
+    }
+
+    public static void wave1(int[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (i % 2 == 0) {   // even
+                for (int j = 0; j < arr[0].length; j++) {
+                    System.out.print(arr[i][j] + ", ");
+                }
+            } else {
+                for (int j = arr[0].length - 1; j >= 0; j--) {
+                    System.out.print(arr[i][j] + ", ");
+                }
+            }
         }
     }
 
@@ -38,16 +57,16 @@ public class lecture {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-    
+
     public static void count012(int[] arr) {
         int ptr1 = 0, itr = 0, ptr2 = arr.length - 1;
-        while ( itr <= ptr2 ) {
-            if ( arr[itr] == 0 ) {
-                swap( arr, itr, ptr1 );
+        while (itr <= ptr2) {
+            if (arr[itr] == 0) {
+                swap(arr, itr, ptr1);
                 ptr1++;
                 itr++;
-            } else if ( arr[itr] == 2 ) {
-                swap( arr, itr, ptr2 );
+            } else if (arr[itr] == 2) {
+                swap(arr, itr, ptr2);
                 ptr2--;
             } else {
                 itr++;
