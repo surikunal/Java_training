@@ -18,7 +18,46 @@ public class lecture {
 
         // main logic
         // sumOf2Array(arr1, n, arr2, m);
-        printAllSubarrays(arr);
+        // printAllSubarrays(arr);
+        fistIndexLastIndex(arr);
+    }
+
+    public static void fistIndexLastIndex(int[] arr) {
+        int i = 0, j = arr.length - 1;
+        // first index
+        while ( i <= j ) {
+            int mid = (i + j) / 2;
+            if ( arr[mid] == tar ) {
+                
+                if ( mid - 1 >= 0 && arr[mid - 1] == arr[mid] ) {
+                    j = mid - 1;
+                } else {
+                    System.out.print(mid);
+                }
+
+            } else if ( arr[mid] < tar ) {
+                i = mid + 1;
+            } else if ( arr[mid] > tar ) {
+                j = mid - 1;
+            }
+        }
+        // last index
+        while ( i <= j ) {
+            int mid = (i + j) / 2;
+            if ( arr[mid] == tar ) {
+                
+                if ( mid + 1 < arr.length && arr[mid + 1] == arr[mid] ) {
+                    i = mid + 1;
+                } else {
+                    System.out.print(mid);
+                }
+
+            } else if ( arr[mid] < tar ) {
+                i = mid + 1;
+            } else if ( arr[mid] > tar ) {
+                j = mid - 1;
+            }
+        }
     }
 
     public static void printAllSubarrays(int[] arr) {
