@@ -1,5 +1,5 @@
 import java.util.*;
-class lecture {
+class lecture4 {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         System.out.println("Enter size of array : ");
