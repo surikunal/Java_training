@@ -34,8 +34,60 @@ public class lecture {
         int[][] arr2d = { { 1, 2, 3, 4, 5 }, 
                           { 6, 7, 8, 9, 10 }, 
                           { 11, 12, 13, 14, 15 }, 
-                          { 16, 17, 18, 19, 20 } };
-        wave1(arr2d);
+                          { 16, 17, 18, 19, 20 },
+                          { 21, 22, 23, 24, 25 } };
+        // wave1(arr2d);
+        // wave2(arr2d);
+        sprial1(arr2d);
+    }
+
+    public static void sprial1(int[][] arr) {
+        int minr = 0;
+        int minc = 0;
+        int maxr = arr.length - 1;
+        int maxc = arr[0].length - 1;
+        int count = 0;
+        int total = arr.length * arr[0].length;
+        while ( count < total ) {
+            for (int col = minc; col <= maxc && count < total; col++) {
+                System.out.print(arr[minr][col] + ", ");
+                count++;
+            }
+            minr++;
+            
+            for (int row = minr; row <= maxr && count < total; row++) {
+                System.out.print(arr[row][maxc] + ", ");
+                count++;
+            }
+            maxc--;
+
+            for (int col = maxc; col >= minc && count < total; col--) {
+                System.out.print(arr[maxr][col] + ", ");
+                count++;
+            }
+            maxr--;
+
+            for (int row = maxr; row >= minr && count < total; row--) {
+                System.out.print(arr[row][minc] + ", ");
+                count++;
+            }
+            minc++;
+        }
+    }
+
+    public static void wave2(int[][] arr) {
+        // main logic
+        for (int j = 0; j < arr[0].length; j++) {
+            if (j % 2 == 0) {   // even index
+                for (int i = 0; i < arr.length; i++) {
+                    System.out.print(arr[i][j] + ", ");
+                }
+            } else if (j % 2 != 0) {    // odd index
+                for (int i = arr.length - 1; i >= 0; i--) {
+                    System.out.print(arr[i][j] + ", ");
+                }
+            }
+        }
     }
 
     public static void wave1(int[][] arr) {
