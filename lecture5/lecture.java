@@ -175,6 +175,7 @@ public class lecture {
                 i = mid + 1;
             } else if (arr[mid] > tar) {
                 j = mid - 1;
+                
             }
         }
     }
